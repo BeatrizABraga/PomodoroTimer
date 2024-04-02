@@ -1,0 +1,126 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: clamp(40%, 1% + 2vw, 62.5%);
+
+    --bg-color: white;
+    --text-color: #29292E;
+    --text-button: #323238;
+    --bg-button-sound-secondary: #E1E1E6;
+    --bg-button-sound: #02799D; 
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: "Roboto", sans-serif;
+
+    display: grid;
+    height: 100vh;
+    place-content: center;
+}
+
+main{
+    display: flex;
+    gap: 19rem;
+}
+
+#timer {
+    font-size: 12rem;
+    font-weight: 500;
+}
+
+.flex {
+    display: flex;
+}
+
+.TimerControls {
+    gap: 4rem;
+    justify-content: center;
+}
+
+.TimerControls button {
+    border: none;
+    background-color: transparent;
+    font-size: 5rem;
+    
+    cursor: pointer;
+    color: var(--text-button);
+}
+
+#musicOn {
+    display: grid;
+    grid-template-rows: repeat(2,  1fr);
+    grid-template-columns: repeat(2,  1fr);
+    gap: 3.2rem;
+}
+
+#musicOn button {
+    background-color: var(--bg-button-sound-secondary);
+    border: none;
+    color: var(--text-button);
+    font-size: 4.8rem;
+    border-radius: 2.4rem;
+    width: 13rem;
+    height: 15rem;
+
+    grid-row: span 1; 
+}
+
+.sr-only {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    appearance: none;
+}
+
+.running .ph-play-circle,
+.running .ph-timer,
+html:not(.running) .ph-pause-circle,
+html:not(.running) .ph-stop-circle{
+    display: none;
+}
+
+.TimerControls button:focus {
+    color: var(--bg-button-sound);
+
+}
+
+#musicOn button:focus {
+    background: var(--bg-button-sound);
+}
+
+@media (max-width: 1000px) {
+    main {
+        display: grid;
+    }
+
+    #allTimerComponets {
+        margin-top: 5rem;
+    }
+
+    #musicOn {
+        display: flex;
+    }
+
+    #musicOn button {
+        background-color: var(--bg-button-sound-secondary);
+        border: none;
+        color: var(--text-button);
+        font-size: 3rem;
+        border-radius: 2.4rem;
+        width: 7rem;
+        height: 7rem;
+    
+        grid-row: span 1; 
+    }
+}
